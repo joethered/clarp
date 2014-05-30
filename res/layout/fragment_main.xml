@@ -11,9 +11,14 @@
     tools:context="com.twwgames.clarp.MainActivity$PlaceholderFragment" >
 
     <ListView
-        android1:id="@+id/listView1"
+        android1:id="@+id/games_list_view"
         android1:layout_width="match_parent"
         android1:layout_height="wrap_content" >
     </ListView>
+    
+    <TextView android:id="@+id/empty_games_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/empty_games_list" />
 
 </LinearLayout>
