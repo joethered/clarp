@@ -10,6 +10,9 @@
     <string name="game_title">Title:</string>
     <string name="game_genre">Genre:</string>
     <string name="game_description">Synopsis:</string>
-    <string name="btn_invite">Invite Friends@st</string>
+    <string name="btn_invite">Invite Friends</string>
+    <string-array name="genres">
+        <item>Murder Mystery Investigation</item>
+    </string-array>
 
 </resources>
