@@ -14,5 +14,7 @@
     <string-array name="genres">
         <item>Murder Mystery Investigation</item>
     </string-array>
+    <string name="app_id">295573873940094</string>
+    <string name="welcome">Hello world</string>
 
 </resources>
