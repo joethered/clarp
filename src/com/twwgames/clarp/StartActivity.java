@@ -102,5 +102,10 @@ public class StartActivity extends ActionBarActivity {
             return rootView;
         }
     }
+    
+	public void clickNewGame(View v) {
+		Intent intent = new Intent(StartActivity.this, NewGameActivity.class);
+        startActivity(intent);
+	}
 
 }
