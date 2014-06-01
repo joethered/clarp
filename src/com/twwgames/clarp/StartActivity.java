@@ -27,9 +27,6 @@ public class StartActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
             .add(R.id.container, new PlaceholderFragment()).commit();
@@ -59,7 +56,10 @@ public class StartActivity extends ActionBarActivity {
             }
         });
 
+        Game myGame = new Game("MyGame", 0, null, null);
+
         gamesList = new ArrayList<Game>();
+        gamesList.add(0, myGame);
 
         arrayAdapter = new ArrayAdapter<Game>(this,
                 android.R.layout.simple_list_item_1, gamesList);

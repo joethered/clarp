@@ -7,6 +7,14 @@ public class Game {
     private String description;
     //private ArrayList users;
 
+    public Game(String name, Integer id, Integer type, String description) {
+        super();
+        this.name = name;
+        this.id = id;
+        this.type = type;
+        this.description = description;
+    }
+
     public String getName() {
         return name;
     }
@@ -38,4 +46,11 @@ public class Game {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "Game [name=" + name + ", id=" + id + "]";
+    }
+
+
 }
