@@ -1,3 +1,5 @@
 */bin
 */gen
 bin/R.txt
+bin/.gitignore
+bin/AndroidManifest.xml
