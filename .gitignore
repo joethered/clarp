@@ -3,3 +3,4 @@
 bin/R.txt
 bin/.gitignore
 bin/AndroidManifest.xml
+appcompat_v7/
