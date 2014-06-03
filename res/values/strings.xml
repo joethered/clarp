@@ -10,7 +10,7 @@
     <string name="game_title">Title:</string>
     <string name="game_genre">Genre:</string>
     <string name="game_description">Synopsis:</string>
-    <string name="btn_invite">Invite Friends@st</string>
+    <string name="btn_invite">Invite Friends</string>
     <string name="empty_games_list">No current games</string>
     <string name="empty_messages_list">Say something!</string>
     <string name="title_activity_game">GameActivity</string>
