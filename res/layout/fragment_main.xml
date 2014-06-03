@@ -13,12 +13,14 @@
     <ListView
         android1:id="@+id/games_list_view"
         android1:layout_width="match_parent"
-        android1:layout_height="wrap_content" >
+        android1:layout_height="match_parent">
     </ListView>
     
     <TextView android:id="@+id/empty_games_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/empty_games_list" />
+
+
 
 </LinearLayout>

@@ -1,17 +1,28 @@
 package com.twwgames.clarp;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
+import java.util.ArrayList;
+
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ListView;
 
 public class GameActivity extends ActionBarActivity {
+
+    private static final String LOG_TAG = "GameActivity";
+
+    private ListView messageListView;
+    private ArrayList<Message> messageList;
+    private ArrayAdapter<Message> arrayAdapter;
+    private Message myMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +31,32 @@ public class GameActivity extends ActionBarActivity {
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment()).commit();
+            .add(R.id.container, new PlaceholderFragment()).commit();
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        //        myMessage = new Message("hello friend", "http://people.ucsc.edu/~bkwest/Alchemy/charmander.png");
+        //        new DownloadImageTask((ImageView) findViewById(R.id.image))
+        //        .execute(myMessage.getImage());
+    }
+
+    public void sendMessage(View v) {
+        Log.d(LOG_TAG, "The button has been pressed");
+        EditText messageEditText = (EditText) findViewById(R.id.message_edit_text);
+        String messageText = messageEditText.getText().toString();
+        Message newMessage = new Message();
+        newMessage.setText(messageText);
+        //newMessage.setImage(myMessage.getImage());
+        messageList.add(newMessage);
+        Log.d(LOG_TAG, "The length of the list now is " + messageList.size());
+        arrayAdapter.notifyDataSetChanged();
+
+        // Clears the entry text.
+        messageEditText.setText("");
     }
 
     @Override
@@ -61,4 +96,31 @@ public class GameActivity extends ActionBarActivity {
         }
     }
 
+
+    //    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+    //        ImageView bmImage;
+    //
+    //        public DownloadImageTask(ImageView bmImage) {
+    //            this.bmImage = bmImage;
+    //        }
+    //
+    //        @Override
+    //        protected Bitmap doInBackground(String... urls) {
+    //            String urldisplay = urls[0];
+    //            Bitmap mIcon11 = null;
+    //            try {
+    //                InputStream in = new java.net.URL(urldisplay).openStream();
+    //                mIcon11 = BitmapFactory.decodeStream(in);
+    //            } catch (Exception e) {
+    //                Log.e("Error", e.getMessage());
+    //                e.printStackTrace();
+    //            }
+    //            return mIcon11;
+    //        }
+    //
+    //        @Override
+    //        protected void onPostExecute(Bitmap result) {
+    //            bmImage.setImageBitmap(result);
+    //        }
+    //    }
 }
